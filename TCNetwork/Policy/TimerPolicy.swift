@@ -20,8 +20,8 @@ class TimerPolicy {
         case delay(interval: TimeInterval)
     }
     
-    private var _timer: Timer?
-    private var _isValid: Bool = false
+    internal var _timer: Timer?
+    internal var _isValid: Bool = false
     var isValid: Bool {
         return _isValid
     }
@@ -29,6 +29,7 @@ class TimerPolicy {
     var polledCount: UInt = 0
     var finished: Bool = false
     var timerType: TimerType?
+    weak internal var _delegate: AnyObject?
     
     var intervalFunc: ((_ policy: TimerPolicy, _ index: UInt) -> IntervalType)?
     
