@@ -24,13 +24,8 @@ class StreamPolicy {
     var shouldResumeDownload: Bool = false
     var downloadIdentifier: String?
     lazy var downloadResumeCacheDirectory: String? =  {
-        var dir: String? = NSTemporaryDirectory() + "TCHTTPRequestResumeCache"
-        do {
-            try FileManager.default.createDirectory(atPath: dir!, withIntermediateDirectories: true)
-        } catch {
-            dir = nil
-        }
-        
+        var dir: String? = NSTemporaryDirectory() + "/TCHTTPRequestResumeCache"
+        try! FileManager.default.createDirectory(atPath: dir!, withIntermediateDirectories: true)
         return dir
     }()
     var downloadDestinationPath: String?

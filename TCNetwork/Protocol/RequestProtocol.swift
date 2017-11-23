@@ -12,6 +12,10 @@ enum RequestState {
     case unfire, network, finished
 }
 
+enum CachedRespState {
+    case none, valid, expired
+}
+
 enum RequestMethod {
     case get, post, postJSON, head, put, delete, patch, download
 }
@@ -46,7 +50,7 @@ protocol RequestProtocol: class {
     var baseUrl: String? { get set }
     var parameters: Any? { get set }
     var timeoutInterval: Double? { get set }
-    var method: Method? { get set }
+    var method: RequestMethod? { get set }
     
     var overrideIfImpact: Bool { get set }
     var ignoreParamFilter: Bool { get set }

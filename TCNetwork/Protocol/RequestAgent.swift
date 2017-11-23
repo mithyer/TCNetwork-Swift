@@ -14,7 +14,7 @@ protocol RequestAgent: class {
     
     func canAdd(request: RequestProtocol) -> (can: Bool, error: NSError?)
     func add(request: RequestProtocol) throws -> Bool
-    func buildRequestUrl(forRequest request: RequestProtocol)
+    func buildRequestUrl(forRequest request: RequestProtocol) -> URL
     
     // cache
     var cachePathForResponse: String { get }

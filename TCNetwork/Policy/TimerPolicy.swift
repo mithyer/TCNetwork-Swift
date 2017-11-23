@@ -15,6 +15,10 @@ class TimerPolicy {
     enum TimerType {
         case polling, retry, delay
     }
+    enum IntervalType {
+        case end
+        case delay(interval: TimeInterval)
+    }
     
     private var _timer: Timer?
     private var _isValid: Bool = false
@@ -26,28 +30,27 @@ class TimerPolicy {
     var finished: Bool = false
     var timerType: TimerType?
     
-    var intervalFunc: ((_ policy: TimerPolicy, _ index: UInt) -> TimeInterval)?
+    var intervalFunc: ((_ policy: TimerPolicy, _ index: UInt) -> IntervalType)?
     
-    class func pollintPolicy(withIntervals intervalFunc: @escaping (_ policy: TimerPolicy, _ index: UInt) -> TimeInterval) -> TimerPolicy {
+    class func pollintPolicy(withIntervals intervalFunc: @escaping (_ policy: TimerPolicy, _ index: UInt) -> IntervalType) -> TimerPolicy {
         let policy = self.init()
         policy.intervalFunc = intervalFunc
         policy.timerType = .polling
         return policy
     }
     
-    static let timerIntervalEnd: Double = -1
     class func delayPolicy(withInterval interval: TimeInterval) -> TimerPolicy? {
         assert(interval > 0)
         guard interval > 0 else {return nil}
         let policy = self.init()
-        policy.intervalFunc =  {(_ policy: TimerPolicy, _ index: UInt) -> TimeInterval in
-            return 0 == index ? interval : timerIntervalEnd
+        policy.intervalFunc =  {(_ policy: TimerPolicy, _ index: UInt) -> IntervalType in
+            return 0 == index ? .delay(interval: interval) : .end
         }
         policy.timerType = .delay
         return policy
     }
     
-    class func retryPolicy(withIntervals intervalFunc: @escaping (_ policy: TimerPolicy, _ index: UInt) -> TimeInterval) -> TimerPolicy {
+    class func retryPolicy(withIntervals intervalFunc: @escaping (_ policy: TimerPolicy, _ index: UInt) -> IntervalType) -> TimerPolicy {
         let policy = self.init()
         policy.intervalFunc = intervalFunc
         policy.timerType = .retry

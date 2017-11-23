@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71DD463C1FC5210200465D66 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD463A1FC5201E00465D66 /* Extensions.swift */; };
 		71DD463E1FC525AD00465D66 /* NSURLSessionTask+ResumeDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD463D1FC525AD00465D66 /* NSURLSessionTask+ResumeDownload.swift */; };
+		71DD46401FC66EE200465D66 /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD463F1FC66EE200465D66 /* CachePolicy.swift */; };
 		71E5C1641FC3DE040025545C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1631FC3DE040025545C /* AppDelegate.swift */; };
 		71E5C1661FC3DE040025545C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1651FC3DE040025545C /* ViewController.swift */; };
 		71E5C1791FC3DE040025545C /* TCNetwork_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1781FC3DE040025545C /* TCNetwork_DemoTests.swift */; };
@@ -99,6 +100,7 @@
 /* Begin PBXFileReference section */
 		71DD463A1FC5201E00465D66 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		71DD463D1FC525AD00465D66 /* NSURLSessionTask+ResumeDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSURLSessionTask+ResumeDownload.swift"; sourceTree = "<group>"; };
+		71DD463F1FC66EE200465D66 /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 		71E5C1601FC3DE040025545C /* TCNetwork-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCNetwork-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E5C1631FC3DE040025545C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E5C1651FC3DE040025545C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				71E5C1A21FC412480025545C /* TimerPolicy.swift */,
 				71E5C1A41FC4195C0025545C /* StreamPolicy.swift */,
+				71DD463F1FC66EE200465D66 /* CachePolicy.swift */,
 			);
 			path = Policy;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			files = (
 				71E5C19A1FC400070025545C /* RespValidatorProtocol.swift in Sources */,
 				71E5C1A51FC4195C0025545C /* StreamPolicy.swift in Sources */,
+				71DD46401FC66EE200465D66 /* CachePolicy.swift in Sources */,
 				71E5C1A31FC412480025545C /* TimerPolicy.swift in Sources */,
 				71E5C1991FC400070025545C /* RequestProtocol.swift in Sources */,
 				71E5C2031FC420820025545C /* RequestAgentDelegate.swift in Sources */,
