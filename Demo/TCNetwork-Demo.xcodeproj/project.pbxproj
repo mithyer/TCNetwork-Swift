@@ -12,6 +12,9 @@
 		71DD46401FC66EE200465D66 /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD463F1FC66EE200465D66 /* CachePolicy.swift */; };
 		71DD46421FC6B0D600465D66 /* TimerPolicy+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46411FC6B0D600465D66 /* TimerPolicy+Request.swift */; };
 		71DD46441FC6BFDA00465D66 /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46431FC6BFDA00465D66 /* ResponseValidator.swift */; };
+		71DD46471FC7EB3100465D66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46461FC7EB3100465D66 /* Request.swift */; };
+		71DD46491FC816A400465D66 /* Request+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46481FC816A400465D66 /* Request+Public.swift */; };
+		71DD464B1FC816FD00465D66 /* CacheRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD464A1FC816FD00465D66 /* CacheRequest.swift */; };
 		71E5C1641FC3DE040025545C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1631FC3DE040025545C /* AppDelegate.swift */; };
 		71E5C1661FC3DE040025545C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1651FC3DE040025545C /* ViewController.swift */; };
 		71E5C1791FC3DE040025545C /* TCNetwork_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1781FC3DE040025545C /* TCNetwork_DemoTests.swift */; };
@@ -105,6 +108,9 @@
 		71DD463F1FC66EE200465D66 /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 		71DD46411FC6B0D600465D66 /* TimerPolicy+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerPolicy+Request.swift"; sourceTree = "<group>"; };
 		71DD46431FC6BFDA00465D66 /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
+		71DD46461FC7EB3100465D66 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		71DD46481FC816A400465D66 /* Request+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Public.swift"; sourceTree = "<group>"; };
+		71DD464A1FC816FD00465D66 /* CacheRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRequest.swift; sourceTree = "<group>"; };
 		71E5C1601FC3DE040025545C /* TCNetwork-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCNetwork-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E5C1631FC3DE040025545C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E5C1651FC3DE040025545C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +185,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71DD46451FC7EB2100465D66 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				71DD46461FC7EB3100465D66 /* Request.swift */,
+				71DD46481FC816A400465D66 /* Request+Public.swift */,
+				71DD464A1FC816FD00465D66 /* CacheRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		71E5C1571FC3DE040025545C = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +242,7 @@
 		71E5C1831FC3DF2D0025545C /* TCNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				71DD46451FC7EB2100465D66 /* Request */,
 				71E5C19D1FC40B9F0025545C /* Policy */,
 				71E5C1841FC3DF2D0025545C /* Protocol */,
 				71DD463A1FC5201E00465D66 /* Extensions.swift */,
@@ -496,10 +513,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				71E5C19A1FC400070025545C /* RespValidatorProtocol.swift in Sources */,
+				71DD46471FC7EB3100465D66 /* Request.swift in Sources */,
+				71DD464B1FC816FD00465D66 /* CacheRequest.swift in Sources */,
 				71E5C1A51FC4195C0025545C /* StreamPolicy.swift in Sources */,
 				71DD46441FC6BFDA00465D66 /* ResponseValidator.swift in Sources */,
 				71DD46401FC66EE200465D66 /* CachePolicy.swift in Sources */,
 				71E5C1A31FC412480025545C /* TimerPolicy.swift in Sources */,
+				71DD46491FC816A400465D66 /* Request+Public.swift in Sources */,
 				71E5C1991FC400070025545C /* RequestProtocol.swift in Sources */,
 				71E5C2031FC420820025545C /* RequestAgentDelegate.swift in Sources */,
 				71E5C1981FC400070025545C /* RequestAgent.swift in Sources */,

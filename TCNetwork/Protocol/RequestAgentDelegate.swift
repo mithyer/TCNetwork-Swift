@@ -12,7 +12,7 @@ protocol RequestAgentDelegate {
     
     var requestTask: URLSessionTask? { get set }
     weak var requestAgent: RequestAgent? { get set }
-    var rawResponseObject: AnyObject? { get set }
+    var rawResponseObject: Any? { get set }
     
     func requestResponded(isValid: Bool, clean: Bool)
 }

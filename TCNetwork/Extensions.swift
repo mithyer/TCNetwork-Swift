@@ -23,3 +23,7 @@ extension NSObject {
         
     }
 }
+
+extension NSException: Error {
+    
+}

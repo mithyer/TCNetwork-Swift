@@ -31,7 +31,7 @@ class TimerPolicy {
     var timerType: TimerType?
     weak internal var _delegate: AnyObject?
     
-    var intervalFunc: ((_ policy: TimerPolicy, _ index: UInt) -> IntervalType)?
+    internal var intervalFunc: ((_ policy: TimerPolicy, _ index: UInt) -> IntervalType)?
     
     class func pollintPolicy(withIntervals intervalFunc: @escaping (_ policy: TimerPolicy, _ index: UInt) -> IntervalType) -> TimerPolicy {
         let policy = self.init()
@@ -41,8 +41,9 @@ class TimerPolicy {
     }
     
     class func delayPolicy(withInterval interval: TimeInterval) -> TimerPolicy? {
-        assert(interval > 0)
-        guard interval > 0 else {return nil}
+        guard interval > 0 else {
+            return nil
+        }
         let policy = self.init()
         policy.intervalFunc =  {(_ policy: TimerPolicy, _ index: UInt) -> IntervalType in
             return 0 == index ? .delay(interval: interval) : .end

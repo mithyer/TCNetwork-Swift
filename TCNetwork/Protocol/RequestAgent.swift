@@ -9,8 +9,8 @@
 import Foundation
 
 protocol RequestAgent: class {
-    func addToPool(request: RequestProtocol)
-    func removeFromPool(request: RequestProtocol)
+    func add(requestToPool request: RequestProtocol)
+    func remove(requestFromPool request: RequestProtocol)
     
     func canAdd(request: RequestProtocol) -> (can: Bool, error: NSError?)
     func add(request: RequestProtocol) throws -> Bool
@@ -19,7 +19,12 @@ protocol RequestAgent: class {
     // cache
     var cachePathForResponse: String { get }
     
-    //func storeCachedResponse(response: AnyObject, forCachePolicy cachePolicy: )
+    func storeCachedResponse(response: Any, forCachePolicy cachePolicy: CachePolicy, finished: () -> ())
+    func cacheResponse(forRequest request: RequestProtocol, result: (_ response: Any?) -> ())
     
+    func responseValidator(forRequest request: RequestProtocol) -> RespValidatorProtocol
+    
+    func requests(forObserver observer: AnyObject) -> [RequestProtocol]
+    func request(forObserver observer: AnyObject, identifer: AnyObject) -> RequestProtocol
 }
 
