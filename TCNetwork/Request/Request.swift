@@ -8,9 +8,7 @@
 
 import Foundation
 
-class Request: RequestProtocol, RequestAgentDelegate, TimerDelegate {
-    
-    required init() {}
+class Request: RequestProtocol, RequestAgentDelegate, TimerDelegate, Hashable {
     
     convenience init(method: RequestMethod) {
         self.init()
@@ -23,12 +21,23 @@ class Request: RequestProtocol, RequestAgentDelegate, TimerDelegate {
     weak var delegate: RequestDelegate?
     var resultHandler: ((_ request: RequestProtocol, _ success: Bool)->())?
     lazy var responseValidator: RespValidatorProtocol? = self.requestAgent?.responseValidator(forRequest: self)
-    lazy var identifier: String? = (String(describing: self.observer) + "_" + String(describing: self.apiUrl) + "_" + String(describing: self.method!)).md5_16
+    lazy var identifier: String? = (String(reflecting: self.observer) + "_" + self.apiUrl! + "_" + "\(self.method!)").md5_16
     var userInfo: [String: Any]?
     var state: RequestState = .unfire
-    var observer: AnyObject? {
-        return self.delegate ?? self
+    
+    weak var _observer: AnyObject? = nil
+    weak var observer: AnyObject? {
+        get {
+            if nil == _observer {
+                _observer = self.delegate ?? self
+            }
+            return _observer
+        }
+        set(new) {
+            _observer = new
+        }
     }
+    
     // MARK: - build request
     var apiUrl: String?
     var baseUrl: String?
@@ -229,4 +238,14 @@ class Request: RequestProtocol, RequestAgentDelegate, TimerDelegate {
     private var _isCancelled: Bool = false
     private var _streamPolicy :StreamPolicy? = nil
     private var _timerPolicy :TimerPolicy? = nil
+    
+    
+    // MARK: Hashable
+    var hashValue: Int {
+        return unsafeBitCast(self, to: Int.self)
+    }
+    
+    public static func ==(lhs: Request, rhs: Request) -> Bool {
+        return lhs === rhs
+    }
 }

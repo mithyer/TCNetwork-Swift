@@ -29,7 +29,7 @@ protocol RequestProtocol: class {
     var identifier: String? { get set }
     var userInfo: [String: Any]? { get set }
     var state: RequestState { get set }
-    var observer: AnyObject? { get }
+    weak var observer: AnyObject? { get set }
     
     /**
      @brief    start a http request with checking available cache,

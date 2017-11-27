@@ -15,6 +15,9 @@
 		71DD46471FC7EB3100465D66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46461FC7EB3100465D66 /* Request.swift */; };
 		71DD46491FC816A400465D66 /* Request+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46481FC816A400465D66 /* Request+Public.swift */; };
 		71DD464B1FC816FD00465D66 /* CacheRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD464A1FC816FD00465D66 /* CacheRequest.swift */; };
+		71DD464D1FCBA72900465D66 /* BatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD464C1FCBA72900465D66 /* BatchRequest.swift */; };
+		71DD464F1FCBE29C00465D66 /* RequestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD464E1FCBE29C00465D66 /* RequestCenter.swift */; };
+		71DD46511FCBE50900465D66 /* RequestUrlFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD46501FCBE50900465D66 /* RequestUrlFilter.swift */; };
 		71E5C1641FC3DE040025545C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1631FC3DE040025545C /* AppDelegate.swift */; };
 		71E5C1661FC3DE040025545C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1651FC3DE040025545C /* ViewController.swift */; };
 		71E5C1791FC3DE040025545C /* TCNetwork_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C1781FC3DE040025545C /* TCNetwork_DemoTests.swift */; };
@@ -111,6 +114,9 @@
 		71DD46461FC7EB3100465D66 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		71DD46481FC816A400465D66 /* Request+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Public.swift"; sourceTree = "<group>"; };
 		71DD464A1FC816FD00465D66 /* CacheRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRequest.swift; sourceTree = "<group>"; };
+		71DD464C1FCBA72900465D66 /* BatchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchRequest.swift; sourceTree = "<group>"; };
+		71DD464E1FCBE29C00465D66 /* RequestCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCenter.swift; sourceTree = "<group>"; };
+		71DD46501FCBE50900465D66 /* RequestUrlFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrlFilter.swift; sourceTree = "<group>"; };
 		71E5C1601FC3DE040025545C /* TCNetwork-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCNetwork-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E5C1631FC3DE040025545C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E5C1651FC3DE040025545C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 				71DD46461FC7EB3100465D66 /* Request.swift */,
 				71DD46481FC816A400465D66 /* Request+Public.swift */,
 				71DD464A1FC816FD00465D66 /* CacheRequest.swift */,
+				71DD464C1FCBA72900465D66 /* BatchRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 				71DD463A1FC5201E00465D66 /* Extensions.swift */,
 				71DD463D1FC525AD00465D66 /* NSURLSessionTask+ResumeDownload.swift */,
 				71DD46431FC6BFDA00465D66 /* ResponseValidator.swift */,
+				71DD464E1FCBE29C00465D66 /* RequestCenter.swift */,
 			);
 			name = TCNetwork;
 			path = ../TCNetwork;
@@ -260,6 +268,7 @@
 				71E5C2011FC41FB70025545C /* RequestAgentDelegate.swift */,
 				71E5C1871FC3FC2D0025545C /* RequestProtocol.swift */,
 				71E5C1891FC3FFE10025545C /* RespValidatorProtocol.swift */,
+				71DD46501FCBE50900465D66 /* RequestUrlFilter.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -517,14 +526,17 @@
 				71DD464B1FC816FD00465D66 /* CacheRequest.swift in Sources */,
 				71E5C1A51FC4195C0025545C /* StreamPolicy.swift in Sources */,
 				71DD46441FC6BFDA00465D66 /* ResponseValidator.swift in Sources */,
+				71DD46511FCBE50900465D66 /* RequestUrlFilter.swift in Sources */,
 				71DD46401FC66EE200465D66 /* CachePolicy.swift in Sources */,
 				71E5C1A31FC412480025545C /* TimerPolicy.swift in Sources */,
 				71DD46491FC816A400465D66 /* Request+Public.swift in Sources */,
+				71DD464F1FCBE29C00465D66 /* RequestCenter.swift in Sources */,
 				71E5C1991FC400070025545C /* RequestProtocol.swift in Sources */,
 				71E5C2031FC420820025545C /* RequestAgentDelegate.swift in Sources */,
 				71E5C1981FC400070025545C /* RequestAgent.swift in Sources */,
 				71DD463C1FC5210200465D66 /* Extensions.swift in Sources */,
 				71DD463E1FC525AD00465D66 /* NSURLSessionTask+ResumeDownload.swift in Sources */,
+				71DD464D1FCBA72900465D66 /* BatchRequest.swift in Sources */,
 				71DD46421FC6B0D600465D66 /* TimerPolicy+Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
